@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SIPISOALU
+Version: F-2011.09-SP3
+Date   : Tue May  5 04:53:23 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: control/CURRENT_STATE_reg[3]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: control/CURRENT_STATE_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SIPISOALU          5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  control/CURRENT_STATE_reg[3]/CK (DFFR_X1)               0.00       0.00 r
+  control/CURRENT_STATE_reg[3]/QN (DFFR_X1)               0.08       0.08 f
+  control/U53/ZN (NAND2_X1)                               0.04       0.12 r
+  control/U49/ZN (NOR2_X1)                                0.02       0.14 f
+  control/U71/ZN (AOI22_X1)                               0.05       0.20 r
+  control/U72/ZN (NAND2_X1)                               0.03       0.23 f
+  control/U73/ZN (INV_X1)                                 0.03       0.26 r
+  control/U15/ZN (OAI21_X1)                               0.04       0.29 f
+  control/U84/ZN (AOI22_X1)                               0.06       0.35 r
+  control/U85/ZN (NAND2_X1)                               0.03       0.38 f
+  control/CURRENT_STATE_reg[2]/D (DFFR_X1)                0.01       0.39 f
+  data arrival time                                                  0.39
+
+  clock CLK (rise edge)                                   0.40       0.40
+  clock network delay (ideal)                             0.00       0.40
+  control/CURRENT_STATE_reg[2]/CK (DFFR_X1)               0.00       0.40 r
+  library setup time                                     -0.04       0.36
+  data required time                                                 0.36
+  --------------------------------------------------------------------------
+  data required time                                                 0.36
+  data arrival time                                                 -0.39
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.03
+
+
+1

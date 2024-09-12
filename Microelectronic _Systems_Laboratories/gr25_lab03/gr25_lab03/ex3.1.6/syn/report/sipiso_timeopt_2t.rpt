@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SIPISOALU
+Version: F-2011.09-SP3
+Date   : Tue May  5 01:07:53 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: control/CURRENT_STATE_reg[4]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: PISO_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SIPISOALU          5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  control/CURRENT_STATE_reg[4]/CK (DFFR_X1)               0.00       0.00 r
+  control/CURRENT_STATE_reg[4]/Q (DFFR_X1)                0.11       0.11 r
+  control/U12/ZN (AND4_X1)                                0.06       0.17 r
+  control/U10/ZN (NAND2_X1)                               0.03       0.20 f
+  control/U11/ZN (NAND2_X1)                               0.04       0.24 r
+  control/shiftC (sipisoAluControl)                       0.00       0.24 r
+  U100/ZN (INV_X1)                                        0.03       0.27 f
+  U93/ZN (OAI221_X1)                                      0.06       0.32 r
+  U92/ZN (OAI21_X1)                                       0.04       0.36 f
+  PISO_reg[1]/D (DFFR_X1)                                 0.01       0.37 f
+  data arrival time                                                  0.37
+
+  clock CLK (rise edge)                                   0.27       0.27
+  clock network delay (ideal)                             0.00       0.27
+  PISO_reg[1]/CK (DFFR_X1)                                0.00       0.27 r
+  library setup time                                     -0.04       0.23
+  data required time                                                 0.23
+  --------------------------------------------------------------------------
+  data required time                                                 0.23
+  data arrival time                                                 -0.37
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.14
+
+
+1

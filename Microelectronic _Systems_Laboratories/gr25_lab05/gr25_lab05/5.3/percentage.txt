@@ -1,0 +1,98 @@
+  nandHSMaxLoad  PARAM LOAD =  5.0000E-17
+
+  RNAND        =  6.7604E-11   targ=  2.2288E-09     trig=  2.1612E-09				nandhsmaxload with nandLLMaxLoad PARAM LOAD = 5.000E-17
+  FNAND        =  6.8830E-11   targ=  1.2074E-09     trig=  1.1385E-09						 
+  NANDDELAYHL  =  2.0851E-11   targ=  1.1839E-09     trig=  1.1630E-09				[NANDDELAYHL(HS) - NANDDELAYHL(LL)]/ NANDDELAYHL(HS) =[2.0851-.31521]/2.8051=-0.5117
+  NANDDELAYLH  =  3.8286E-11   targ=  2.2013E-09     trig=  2.1630E-09				[NANDDELAYLH(HS) - NANDDELAYLH(LL)]/ NANDDELAYLH(HS) =[3.8286-5.2555]/3.8286=-0.3726
+  MAXIGNDF     =  7.7056E-05     at=  1.1909E-09  from=  1.0000E-09     to=  2.0000E-09  	[MAXIGNDF(HS) - MAXIGNDF(LL)]/ MAXIGNDF(HS) =[ 7.7056-5.1755]/7.7056=0.3283
+  MAXIVDDR     = -7.0423E-05     at=  2.2003E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIVDDR(HS) - MAXIVDDR(LL)]/ MAXIVDDR(HS) =[-7.0423- -4.2223]/-7.0423=0.4004
+  MAXIGNDR     =  4.5692E-05     at=  2.1783E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIGNDR(HS) - MAXIGNDR(LL)]/ MAXIGNDR(HS) =[4.5692- 1.6987]/4.5692=0.6282
+  MAXIVDDF     = -4.7680E-05     at=  1.1709E-09  from=  1.0000E-09     to=  2.0000E-09   	[MAXIVDDF(HS) - MAXIVDDF(LL)]/ MAXIVDDF(HS) =[-4.7680- -1.9800]/-4.7680=0.5847
+  MAXILOADF    = -1.2504E-06     at=  1.1939E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXILOADF(HS) - MAXILOADF(LL)]/ MAXILOADF(HS) =[-1.2504- -1.1144]/-1.2504=0.1087
+  MAXILOADR    =  1.1429E-06     at=  2.2076E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXILOADR(HS) - MAXILOADR(LL)]/ MAXILOADR(HS) =[ 11.429- 8.9711]/11.429=0.215
+
+  nandLLMaxLoad  PARAM LOAD =  5.0000E-17
+  RNAND        =  7.1394E-11   targ=  2.2478E-09     trig=  2.1764E-09
+  FNAND        =  6.3376E-11   targ=  1.2185E-09     trig=  1.1552E-09
+  NANDDELAYHL  =  3.1521E-11   targ=  1.1945E-09     trig=  1.1630E-09
+  NANDDELAYLH  =  5.2555E-11   targ=  2.2156E-09     trig=  2.1630E-09
+  MAXIGNDF     =  5.1755E-05     at=  1.2049E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXIVDDR     = -4.2223E-05     at=  2.2181E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIGNDR     =  1.6987E-05     at=  2.1803E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIVDDF     = -1.9800E-05     at=  1.1839E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADF    = -1.1144E-06     at=  1.2075E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADR    =  8.9711E-07     at=  2.2228E-09  from=  2.0000E-09     to=  3.0000E-09
+------------------------------------------------------------------------------------------------------------------------------------------
+
+  nandHSMaxLoad  PARAM LOAD =  5.0000E-14							nandhsmaxload with nandLLMaxLoad PARAM LOAD = 5.000E-14
+  RNAND        =  3.6391E-10   targ=  2.5936E-09     trig=  2.2297E-09						
+  FNAND        =  2.9652E-10   targ=  1.5081E-09     trig=  1.2116E-09	
+  NANDDELAYHL  =  1.8016E-10   targ=  1.3432E-09     trig=  1.1630E-09				[NANDDELAYHL(HS) - NANDDELAYHL(LL)]/ NANDDELAYHL(HS)=-0.2591
+  NANDDELAYLH  =  2.0900E-10   targ=  2.3720E-09     trig=  2.1630E-09				[NANDDELAYLH(HS) - NANDDELAYLH(LL)]/ NANDDELAYLH(HS)=-0.3915
+  MAXIGNDF     =  2.4077E-04     at=  1.3260E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXIGNDF(HS) - MAXIGNDF(LL)]/ MAXIGNDF(HS)=0.2015
+  MAXIVDDR     = -2.0919E-04     at=  2.3260E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIVDDR(HS) - MAXIVDDR(LL)]/ MAXIVDDR(HS)=0.2841
+  MAXIGNDR     =  1.2571E-05     at=  2.1949E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIGNDR(HS) - MAXIGNDR(LL)]/ MAXIGNDR(HS)=0.8462
+  MAXIVDDF     = -1.1039E-05     at=  1.1944E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXIVDDF(HS) - MAXIVDDF(LL)]/ MAXIVDDF(HS)=0.7722
+  MAXILOADF    = -2.3042E-04     at=  1.3271E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXILOADF(HS) - MAXILOADF(LL)]/ MAXILOADF(HS)=0.2041
+  MAXILOADR    =  1.9972E-04     at=  2.3271E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXILOADR(HS) - MAXILOADR(LL)]/ MAXILOADR(HS)=0.2893
+
+  nandLLMaxLoad  PARAM LOAD =  5.0000E-14
+  RNAND        =  5.0239E-10   targ=  2.7677E-09     trig=  2.2653E-09
+  FNAND        =  3.4771E-10   targ=  1.5875E-09     trig=  1.2398E-09
+  NANDDELAYHL  =  2.2684E-10   targ=  1.3898E-09     trig=  1.1630E-09
+  NANDDELAYLH  =  2.9084E-10   targ=  2.4538E-09     trig=  2.1630E-09
+  MAXIGNDF     =  1.9225E-04     at=  1.3260E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXIVDDR     = -1.4975E-04     at=  2.3260E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIGNDR     =  1.9332E-06     at=  2.3350E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIVDDF     = -2.8654E-06     at=  1.3279E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADF    = -1.8338E-04     at=  1.3279E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADR    =  1.4193E-04     at=  2.3270E-09  from=  2.0000E-09     to=  3.0000E-09
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+  nandHSX8MaxLoad  PARAM LOAD =  5.0000E-14							nandHSX8MaxLoad with nandLLX8MaxLoad  PARAM LOAD =  5.0000E-14
+  RNAND        =  1.0546E-10   targ=  2.2769E-09     trig=  2.1714E-09					
+  FNAND        =  1.0084E-10   targ=  1.2545E-09     trig=  1.1536E-09				
+  NANDDELAYHL  =  5.2118E-11   targ=  1.2151E-09     trig=  1.1630E-09				[NANDDELAYHL(HS) - NANDDELAYHL(LL)]/ NANDDELAYHL(HS)=-0.3725	
+  NANDDELAYLH  =  6.6819E-11   targ=  2.2298E-09     trig=  2.1630E-09				[NANDDELAYLH(HS) - NANDDELAYLH(LL)]/ NANDDELAYLH(HS)=-0.4817
+  MAXIGNDF     =  1.0164E-03     at=  1.2275E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXIGNDF(HS) - MAXIGNDF(LL)]/ MAXIGNDF(HS)=0.2021
+  MAXIVDDR     = -8.8259E-04     at=  2.2342E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIVDDR(HS) - MAXIVDDR(LL)]/ MAXIVDDR(HS)=0.2781
+  MAXIGNDR     =  2.7682E-04     at=  2.1777E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIGNDR(HS) - MAXIGNDR(LL)]/ MAXIGNDR(HS)=0.7319
+  MAXIVDDF     = -2.7304E-04     at=  1.1760E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXIVDDF(HS) - MAXIVDDF(LL)]/ MAXIVDDF(HS)=0.7169
+  MAXILOADF    = -7.2917E-04     at=  1.2295E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXILOADF(HS) - MAXILOADF(LL)]/ MAXILOADF(HS)=0.1502
+  MAXILOADR    =  6.5614E-04     at=  2.2363E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXILOADR(HS) - MAXILOADR(LL)]/ MAXILOADR(HS)=0.2552
+
+  nandLLX8MaxLoad  PARAM LOAD =  5.0000E-14
+  RNAND        =  1.2808E-10   targ=  2.3207E-09     trig=  2.1927E-09
+  FNAND        =  1.0473E-10   targ=  1.2795E-09     trig=  1.1747E-09
+  NANDDELAYHL  =  7.1536E-11   targ=  1.2345E-09     trig=  1.1630E-09
+  NANDDELAYLH  =  9.5006E-11   targ=  2.2580E-09     trig=  2.1630E-09
+  MAXIGNDF     =  8.1037E-04     at=  1.2520E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXIVDDR     = -6.3712E-04     at=  2.2663E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIGNDR     =  7.4191E-05     at=  2.1786E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIVDDF     = -7.7287E-05     at=  1.1771E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADF    = -6.1960E-04     at=  1.2520E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADR    =  4.8868E-04     at=  2.2663E-09  from=  2.0000E-09     to=  3.0000E-09
+-------------------------------------------------------------------------------------------------------------
+  nandHSX8MaxLoad  PARAM LOAD =  5.0000E-17
+  RNAND        =  6.2179E-11   targ=  2.2197E-09     trig=  2.1575E-09
+  FNAND        =  6.3836E-11   targ=  1.2016E-09     trig=  1.1377E-09
+  NANDDELAYHL  =  1.7455E-11   targ=  1.1805E-09     trig=  1.1630E-09
+  NANDDELAYLH  =  3.1347E-11   targ=  2.1943E-09     trig=  2.1630E-09
+  MAXIGNDF     =  6.3732E-04     at=  1.1876E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXIVDDR     = -5.5277E-04     at=  2.1926E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIGNDR     =  3.7896E-04     at=  2.1736E-09  from=  2.0000E-09     to=  3.0000E-09
+  MAXIVDDF     = -4.1041E-04     at=  1.1716E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADF    = -1.4246E-06     at=  1.1896E-09  from=  1.0000E-09     to=  2.0000E-09
+  MAXILOADR    =  1.2887E-06     at=  2.1997E-09  from=  2.0000E-09     to=  3.0000E-09
+
+  nandLLX8MaxLoad  PARAM LOAD =  5.0000E-17							nandHSX8MaxLoad with nandLLX8MaxLoad  PARAM LOAD =  5.0000E-17
+  RNAND        =  6.3473E-11   targ=  2.2358E-09     trig=  2.1723E-09						
+  FNAND        =  5.7358E-11   targ=  1.2109E-09     trig=  1.1535E-09
+  NANDDELAYHL  =  2.6755E-11   targ=  1.1898E-09     trig=  1.1630E-09				[NANDDELAYHL(HS) - NANDDELAYHL(LL)]/ NANDDELAYHL(HS)=-0.5327
+  NANDDELAYLH  =  4.4509E-11   targ=  2.2075E-09     trig=  2.1630E-09				[NANDDELAYLH(HS) - NANDDELAYLH(LL)]/ NANDDELAYLH(HS)=-0.4198
+  MAXIGNDF     =  4.0419E-04     at=  1.1984E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXIGNDF(HS) - MAXIGNDF(LL)]/ MAXIGNDF(HS)=0.3657
+  MAXIVDDR     = -3.0291E-04     at=  2.2085E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIVDDR(HS) - MAXIVDDR(LL)]/ MAXIVDDR(HS)=0.4520
+  MAXIGNDR     =  1.3282E-04     at=  2.1754E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXIGNDR(HS) - MAXIGNDR(LL)]/ MAXIGNDR(HS)=0.6495
+  MAXIVDDF     = -1.6557E-04     at=  1.1824E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXIVDDF(HS) - MAXIVDDF(LL)]/ MAXIVDDF(HS)=0.5965
+  MAXILOADF    = -1.2658E-06     at=  1.2015E-09  from=  1.0000E-09     to=  2.0000E-09		[MAXILOADF(HS) - MAXILOADF(LL)]/ MAXILOADF(HS)=0.1114
+  MAXILOADR    =  1.0162E-06     at=  2.2152E-09  from=  2.0000E-09     to=  3.0000E-09		[MAXILOADR(HS) - MAXILOADR(LL)]/ MAXILOADR(HS)=0.2114
+

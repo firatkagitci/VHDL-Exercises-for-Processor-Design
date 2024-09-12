@@ -1,0 +1,16 @@
+In the first image there are the 2 differnt behavior for the hold time FF HL transition:
+actually for how the FF is made there is no hold-time violation, since it is as 
+the signal is sampled before the clock transition. This means that if the signal 
+changes after the clock edge the FF doesn't notice and samples  the input as before the 
+clock edge. So the differece between the 2 signals in the image is a set up time
+violation. 
+The transition HL has 5 signals sampled as 0 and 35 as 1
+The transition LH has 3 signals sampled as 1 and 38 as 0
+
+
+HL_SU time if the data in changes with a offset higher than 1.3e-10 the FF sample a 0 
+instead of a 1
+
+
+LH_SU time if the data in changes with a offset higher than 1.6e-10 the FF sample a 1 
+instead of a 0 (in the image V(out)_17 is incorrect)

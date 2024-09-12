@@ -1,0 +1,7 @@
+v 4
+file . ".\or_tb.vhd" "bc95a0c367f0d06831e55e02168d4d6f50e971c6" "20240909104125.998":
+  entity or_tb at 1( 0) + 0 on 17;
+  architecture test of or_tb at 7( 79) + 0 on 18;
+file . ".\or.vhd" "6c4d3db2efc915a371fcdb8c77b16028cd56b7bf" "20240909104116.047":
+  entity orgate at 1( 0) + 0 on 15;
+  architecture behav of orgate at 13( 154) + 1 on 16;

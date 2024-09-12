@@ -1,0 +1,97 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -sort_by group
+Design : BOOTHMUL_NBIT8
+Version: F-2011.09-SP3
+Date   : Tue Apr 14 14:42:37 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: INPUT_2[3] (input port)
+  Endpoint: MUL_OUT[15]
+            (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BOOTHMUL_NBIT8     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  INPUT_2[3] (in)                                         0.00       0.00 r
+  BOOTH_enc/A[3] (booth_encoder_NBIT8)                    0.00       0.00 r
+  BOOTH_enc/ENCODER_N_1/A[2] (encoder_3)                  0.00       0.00 r
+  BOOTH_enc/ENCODER_N_1/U6/ZN (INV_X1)                    0.02       0.02 f
+  BOOTH_enc/ENCODER_N_1/U3/ZN (AOI21_X1)                  0.05       0.07 r
+  BOOTH_enc/ENCODER_N_1/U4/ZN (OR2_X1)                    0.04       0.11 r
+  BOOTH_enc/ENCODER_N_1/U1/ZN (AND2_X2)                   0.04       0.15 r
+  BOOTH_enc/ENCODER_N_1/Y[1] (encoder_3)                  0.00       0.15 r
+  BOOTH_enc/Y[4] (booth_encoder_NBIT8)                    0.00       0.15 r
+  MUX81_N_1/SEL[1] (MUX81_GENERIC_NBIT16_3)               0.00       0.15 r
+  MUX81_N_1/U19/ZN (INV_X1)                               0.02       0.17 f
+  MUX81_N_1/U81/ZN (AND3_X2)                              0.06       0.23 f
+  MUX81_N_1/U102/ZN (AOI22_X1)                            0.07       0.30 r
+  MUX81_N_1/U16/ZN (AND3_X1)                              0.05       0.36 r
+  MUX81_N_1/U20/ZN (NAND2_X1)                             0.03       0.39 f
+  MUX81_N_1/Y[2] (MUX81_GENERIC_NBIT16_3)                 0.00       0.39 f
+  first_adder/B[2] (RCA_NBIT16_0)                         0.00       0.39 f
+  first_adder/r52/B[2] (RCA_NBIT16_0_DW01_add_0)          0.00       0.39 f
+  first_adder/r52/U1_2/CO (FA_X1)                         0.09       0.48 f
+  first_adder/r52/U78/ZN (NAND2_X1)                       0.04       0.52 r
+  first_adder/r52/U80/ZN (NAND3_X1)                       0.04       0.56 f
+  first_adder/r52/U84/ZN (NAND2_X1)                       0.04       0.61 r
+  first_adder/r52/U25/ZN (NAND3_X1)                       0.04       0.64 f
+  first_adder/r52/U91/ZN (NAND2_X1)                       0.04       0.68 r
+  first_adder/r52/U92/ZN (NAND3_X1)                       0.04       0.72 f
+  first_adder/r52/U68/ZN (NAND2_X1)                       0.04       0.76 r
+  first_adder/r52/U70/ZN (NAND3_X1)                       0.04       0.80 f
+  first_adder/r52/U73/ZN (NAND2_X1)                       0.04       0.84 r
+  first_adder/r52/U14/ZN (NAND3_X1)                       0.05       0.88 f
+  first_adder/r52/U4/ZN (NAND2_X1)                        0.04       0.92 r
+  first_adder/r52/U16/ZN (NAND3_X1)                       0.04       0.96 f
+  first_adder/r52/U61/ZN (NAND2_X1)                       0.03       0.99 r
+  first_adder/r52/U64/ZN (NAND3_X1)                       0.04       1.03 f
+  first_adder/r52/U51/ZN (NAND2_X1)                       0.04       1.07 r
+  first_adder/r52/U3/ZN (NAND3_X1)                        0.04       1.11 f
+  first_adder/r52/U56/ZN (NAND2_X1)                       0.03       1.14 r
+  first_adder/r52/U58/ZN (NAND3_X1)                       0.04       1.18 f
+  first_adder/r52/U1_12/S (FA_X1)                         0.11       1.29 f
+  first_adder/r52/SUM[12] (RCA_NBIT16_0_DW01_add_0)       0.00       1.29 f
+  first_adder/S[12] (RCA_NBIT16_0)                        0.00       1.29 f
+  RCA_n_0/A[12] (RCA_NBIT16_2)                            0.00       1.29 f
+  RCA_n_0/r52/A[12] (RCA_NBIT16_2_DW01_add_0)             0.00       1.29 f
+  RCA_n_0/r52/U1_12/CO (FA_X1)                            0.11       1.40 f
+  RCA_n_0/r52/U36/ZN (NAND2_X1)                           0.04       1.45 r
+  RCA_n_0/r52/U8/ZN (NAND3_X1)                            0.04       1.48 f
+  RCA_n_0/r52/U39/ZN (NAND2_X1)                           0.03       1.51 r
+  RCA_n_0/r52/U41/ZN (NAND3_X1)                           0.04       1.55 f
+  RCA_n_0/r52/U1_15/S (FA_X1)                             0.11       1.66 f
+  RCA_n_0/r52/SUM[15] (RCA_NBIT16_2_DW01_add_0)           0.00       1.66 f
+  RCA_n_0/S[15] (RCA_NBIT16_2)                            0.00       1.66 f
+  RCA_n_1/A[15] (RCA_NBIT16_1)                            0.00       1.66 f
+  RCA_n_1/r52/A[15] (RCA_NBIT16_1_DW01_add_0)             0.00       1.66 f
+  RCA_n_1/r52/U1_15/S (FA_X1)                             0.14       1.80 r
+  RCA_n_1/r52/SUM[15] (RCA_NBIT16_1_DW01_add_0)           0.00       1.80 r
+  RCA_n_1/S[15] (RCA_NBIT16_1)                            0.00       1.80 r
+  MUL_OUT[15] (out)                                       0.00       1.80 r
+  data arrival time                                                  1.80
+
+  max_delay                                               1.80       1.80
+  output external delay                                   0.00       1.80
+  data required time                                                 1.80
+  --------------------------------------------------------------------------
+  data required time                                                 1.80
+  data arrival time                                                 -1.80
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+

@@ -1,0 +1,2 @@
+In general if the capicitance load increases, it increases the delay time for both transitions since some current is used for charging or discharging the capacitance.
+This can be also noticed because for higher values of capacitance the respective currents are higher. 

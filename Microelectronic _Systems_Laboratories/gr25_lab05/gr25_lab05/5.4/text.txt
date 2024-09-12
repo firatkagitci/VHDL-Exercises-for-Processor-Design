@@ -1,0 +1,2 @@
+The sizing affects the current that can "flows" throught the transistor, in particular if the W is bigger the transistor can handle a much higher current as it can be 
+seen in the plot.

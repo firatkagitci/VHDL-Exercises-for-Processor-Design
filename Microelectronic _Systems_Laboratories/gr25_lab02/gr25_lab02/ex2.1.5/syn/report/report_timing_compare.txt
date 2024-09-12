@@ -1,0 +1,8 @@
+After the optimization the critical path starts from INPUT_1 and ends at SUM[12]
+Some ports are changed, the first XOR(of not optimazied) is optimized into 1 INV 
+and 2 NAND, allowing a spare of 0.01 ns; similarly after, twice, 2 NAND are used 
+instead of a AOI21 and a INV.
+Overall the constraints are respected, so with a different implementation the 
+circuit is 20% faster; but this improvement affects the area which increase from 
+504 to 516, considering that, the improvement of timing is much higer than the 
+worsening of area, is a good trade off 

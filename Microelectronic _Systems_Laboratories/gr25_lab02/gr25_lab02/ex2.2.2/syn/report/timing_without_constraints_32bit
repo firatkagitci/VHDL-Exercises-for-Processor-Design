@@ -1,0 +1,190 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'BOOTHMUL_NBIT32' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -sort_by group
+Design : BOOTHMUL_NBIT32
+Version: F-2011.09-SP3
+Date   : Tue Apr 14 14:46:47 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: INPUT_2[1] (input port)
+  Endpoint: MUL_OUT[63]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BOOTHMUL_NBIT32    5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  INPUT_2[1] (in)                                         0.00       0.00 r
+  BOOTH_enc/A[1] (booth_encoder_NBIT32)                   0.00       0.00 r
+  BOOTH_enc/ENCODER_N_0/A[2] (encoder_4)                  0.00       0.00 r
+  BOOTH_enc/ENCODER_N_0/U7/ZN (INV_X1)                    0.03       0.03 f
+  BOOTH_enc/ENCODER_N_0/U4/ZN (AOI21_X1)                  0.15       0.18 r
+  BOOTH_enc/ENCODER_N_0/U3/ZN (INV_X1)                    0.03       0.21 f
+  BOOTH_enc/ENCODER_N_0/U1/ZN (AOI21_X1)                  0.09       0.29 r
+  BOOTH_enc/ENCODER_N_0/Y[1] (encoder_4)                  0.00       0.29 r
+  BOOTH_enc/Y[1] (booth_encoder_NBIT32)                   0.00       0.29 r
+  MUX81_N_0/SEL[1] (MUX81_GENERIC_NBIT64_0)               0.00       0.29 r
+  MUX81_N_0/U333/ZN (INV_X1)                              0.05       0.34 f
+  MUX81_N_0/U1/ZN (OR3_X1)                                0.11       0.45 f
+  MUX81_N_0/U12/ZN (INV_X4)                               0.15       0.60 r
+  MUX81_N_0/U222/ZN (AOI22_X1)                            0.06       0.67 f
+  MUX81_N_0/U219/ZN (NAND4_X1)                            0.04       0.71 r
+  MUX81_N_0/Y[2] (MUX81_GENERIC_NBIT64_0)                 0.00       0.71 r
+  first_adder/A[2] (RCA_NBIT64_0)                         0.00       0.71 r
+  first_adder/r52/A[2] (RCA_NBIT64_0_DW01_add_0)          0.00       0.71 r
+  first_adder/r52/U1_2/CO (FA_X1)                         0.08       0.79 r
+  first_adder/r52/U1_3/CO (FA_X1)                         0.07       0.86 r
+  first_adder/r52/U1_4/S (FA_X1)                          0.11       0.97 f
+  first_adder/r52/SUM[4] (RCA_NBIT64_0_DW01_add_0)        0.00       0.97 f
+  first_adder/S[4] (RCA_NBIT64_0)                         0.00       0.97 f
+  RCA_n_0/A[4] (RCA_NBIT64_14)                            0.00       0.97 f
+  RCA_n_0/r52/A[4] (RCA_NBIT64_14_DW01_add_0)             0.00       0.97 f
+  RCA_n_0/r52/U1_4/CO (FA_X1)                             0.10       1.07 f
+  RCA_n_0/r52/U1_5/CO (FA_X1)                             0.09       1.16 f
+  RCA_n_0/r52/U1_6/CO (FA_X1)                             0.09       1.26 f
+  RCA_n_0/r52/U1_7/CO (FA_X1)                             0.09       1.35 f
+  RCA_n_0/r52/U1_8/CO (FA_X1)                             0.09       1.44 f
+  RCA_n_0/r52/U1_9/CO (FA_X1)                             0.09       1.53 f
+  RCA_n_0/r52/U1_10/CO (FA_X1)                            0.09       1.62 f
+  RCA_n_0/r52/U1_11/CO (FA_X1)                            0.09       1.71 f
+  RCA_n_0/r52/U1_12/CO (FA_X1)                            0.09       1.81 f
+  RCA_n_0/r52/U1_13/CO (FA_X1)                            0.09       1.90 f
+  RCA_n_0/r52/U1_14/CO (FA_X1)                            0.09       1.99 f
+  RCA_n_0/r52/U1_15/CO (FA_X1)                            0.09       2.08 f
+  RCA_n_0/r52/U1_16/CO (FA_X1)                            0.09       2.17 f
+  RCA_n_0/r52/U1_17/CO (FA_X1)                            0.09       2.26 f
+  RCA_n_0/r52/U1_18/CO (FA_X1)                            0.09       2.36 f
+  RCA_n_0/r52/U1_19/CO (FA_X1)                            0.09       2.45 f
+  RCA_n_0/r52/U1_20/CO (FA_X1)                            0.09       2.54 f
+  RCA_n_0/r52/U1_21/CO (FA_X1)                            0.09       2.63 f
+  RCA_n_0/r52/U1_22/CO (FA_X1)                            0.09       2.72 f
+  RCA_n_0/r52/U1_23/CO (FA_X1)                            0.09       2.81 f
+  RCA_n_0/r52/U1_24/CO (FA_X1)                            0.09       2.90 f
+  RCA_n_0/r52/U1_25/CO (FA_X1)                            0.09       3.00 f
+  RCA_n_0/r52/U1_26/CO (FA_X1)                            0.09       3.09 f
+  RCA_n_0/r52/U1_27/CO (FA_X1)                            0.09       3.18 f
+  RCA_n_0/r52/U1_28/CO (FA_X1)                            0.09       3.27 f
+  RCA_n_0/r52/U1_29/CO (FA_X1)                            0.09       3.36 f
+  RCA_n_0/r52/U1_30/CO (FA_X1)                            0.09       3.45 f
+  RCA_n_0/r52/U1_31/CO (FA_X1)                            0.09       3.55 f
+  RCA_n_0/r52/U1_32/CO (FA_X1)                            0.09       3.64 f
+  RCA_n_0/r52/U1_33/CO (FA_X1)                            0.09       3.73 f
+  RCA_n_0/r52/U1_34/CO (FA_X1)                            0.09       3.82 f
+  RCA_n_0/r52/U1_35/CO (FA_X1)                            0.09       3.91 f
+  RCA_n_0/r52/U1_36/CO (FA_X1)                            0.09       4.00 f
+  RCA_n_0/r52/U1_37/CO (FA_X1)                            0.09       4.10 f
+  RCA_n_0/r52/U1_38/CO (FA_X1)                            0.09       4.19 f
+  RCA_n_0/r52/U1_39/CO (FA_X1)                            0.09       4.28 f
+  RCA_n_0/r52/U1_40/CO (FA_X1)                            0.09       4.37 f
+  RCA_n_0/r52/U1_41/CO (FA_X1)                            0.09       4.46 f
+  RCA_n_0/r52/U1_42/CO (FA_X1)                            0.09       4.55 f
+  RCA_n_0/r52/U1_43/CO (FA_X1)                            0.09       4.64 f
+  RCA_n_0/r52/U1_44/CO (FA_X1)                            0.09       4.74 f
+  RCA_n_0/r52/U1_45/CO (FA_X1)                            0.09       4.83 f
+  RCA_n_0/r52/U1_46/CO (FA_X1)                            0.09       4.92 f
+  RCA_n_0/r52/U1_47/CO (FA_X1)                            0.09       5.01 f
+  RCA_n_0/r52/U1_48/CO (FA_X1)                            0.09       5.10 f
+  RCA_n_0/r52/U1_49/CO (FA_X1)                            0.09       5.19 f
+  RCA_n_0/r52/U1_50/CO (FA_X1)                            0.09       5.29 f
+  RCA_n_0/r52/U1_51/CO (FA_X1)                            0.09       5.38 f
+  RCA_n_0/r52/U1_52/CO (FA_X1)                            0.09       5.47 f
+  RCA_n_0/r52/U1_53/CO (FA_X1)                            0.09       5.56 f
+  RCA_n_0/r52/U1_54/CO (FA_X1)                            0.09       5.65 f
+  RCA_n_0/r52/U1_55/CO (FA_X1)                            0.09       5.74 f
+  RCA_n_0/r52/U1_56/CO (FA_X1)                            0.09       5.84 f
+  RCA_n_0/r52/U1_57/S (FA_X1)                             0.14       5.97 r
+  RCA_n_0/r52/SUM[57] (RCA_NBIT64_14_DW01_add_0)          0.00       5.97 r
+  RCA_n_0/S[57] (RCA_NBIT64_14)                           0.00       5.97 r
+  RCA_n_1/A[57] (RCA_NBIT64_13)                           0.00       5.97 r
+  RCA_n_1/r52/A[57] (RCA_NBIT64_13_DW01_add_0)            0.00       5.97 r
+  RCA_n_1/r52/U1_57/S (FA_X1)                             0.12       6.09 f
+  RCA_n_1/r52/SUM[57] (RCA_NBIT64_13_DW01_add_0)          0.00       6.09 f
+  RCA_n_1/S[57] (RCA_NBIT64_13)                           0.00       6.09 f
+  RCA_n_2/A[57] (RCA_NBIT64_12)                           0.00       6.09 f
+  RCA_n_2/r52/A[57] (RCA_NBIT64_12_DW01_add_0)            0.00       6.09 f
+  RCA_n_2/r52/U1_57/CO (FA_X1)                            0.10       6.19 f
+  RCA_n_2/r52/U1_58/S (FA_X1)                             0.14       6.33 r
+  RCA_n_2/r52/SUM[58] (RCA_NBIT64_12_DW01_add_0)          0.00       6.33 r
+  RCA_n_2/S[58] (RCA_NBIT64_12)                           0.00       6.33 r
+  RCA_n_3/A[58] (RCA_NBIT64_11)                           0.00       6.33 r
+  RCA_n_3/r52/A[58] (RCA_NBIT64_11_DW01_add_0)            0.00       6.33 r
+  RCA_n_3/r52/U1_58/S (FA_X1)                             0.12       6.45 f
+  RCA_n_3/r52/SUM[58] (RCA_NBIT64_11_DW01_add_0)          0.00       6.45 f
+  RCA_n_3/S[58] (RCA_NBIT64_11)                           0.00       6.45 f
+  RCA_n_4/A[58] (RCA_NBIT64_10)                           0.00       6.45 f
+  RCA_n_4/r52/A[58] (RCA_NBIT64_10_DW01_add_0)            0.00       6.45 f
+  RCA_n_4/r52/U1_58/CO (FA_X1)                            0.10       6.55 f
+  RCA_n_4/r52/U1_59/S (FA_X1)                             0.14       6.69 r
+  RCA_n_4/r52/SUM[59] (RCA_NBIT64_10_DW01_add_0)          0.00       6.69 r
+  RCA_n_4/S[59] (RCA_NBIT64_10)                           0.00       6.69 r
+  RCA_n_5/A[59] (RCA_NBIT64_9)                            0.00       6.69 r
+  RCA_n_5/r52/A[59] (RCA_NBIT64_9_DW01_add_0)             0.00       6.69 r
+  RCA_n_5/r52/U1_59/S (FA_X1)                             0.12       6.81 f
+  RCA_n_5/r52/SUM[59] (RCA_NBIT64_9_DW01_add_0)           0.00       6.81 f
+  RCA_n_5/S[59] (RCA_NBIT64_9)                            0.00       6.81 f
+  RCA_n_6/A[59] (RCA_NBIT64_8)                            0.00       6.81 f
+  RCA_n_6/r52/A[59] (RCA_NBIT64_8_DW01_add_0)             0.00       6.81 f
+  RCA_n_6/r52/U1_59/CO (FA_X1)                            0.10       6.91 f
+  RCA_n_6/r52/U1_60/S (FA_X1)                             0.14       7.05 r
+  RCA_n_6/r52/SUM[60] (RCA_NBIT64_8_DW01_add_0)           0.00       7.05 r
+  RCA_n_6/S[60] (RCA_NBIT64_8)                            0.00       7.05 r
+  RCA_n_7/A[60] (RCA_NBIT64_7)                            0.00       7.05 r
+  RCA_n_7/r52/A[60] (RCA_NBIT64_7_DW01_add_0)             0.00       7.05 r
+  RCA_n_7/r52/U1_60/S (FA_X1)                             0.12       7.17 f
+  RCA_n_7/r52/SUM[60] (RCA_NBIT64_7_DW01_add_0)           0.00       7.17 f
+  RCA_n_7/S[60] (RCA_NBIT64_7)                            0.00       7.17 f
+  RCA_n_8/A[60] (RCA_NBIT64_6)                            0.00       7.17 f
+  RCA_n_8/r52/A[60] (RCA_NBIT64_6_DW01_add_0)             0.00       7.17 f
+  RCA_n_8/r52/U1_60/CO (FA_X1)                            0.10       7.27 f
+  RCA_n_8/r52/U1_61/S (FA_X1)                             0.14       7.41 r
+  RCA_n_8/r52/SUM[61] (RCA_NBIT64_6_DW01_add_0)           0.00       7.41 r
+  RCA_n_8/S[61] (RCA_NBIT64_6)                            0.00       7.41 r
+  RCA_n_9/A[61] (RCA_NBIT64_5)                            0.00       7.41 r
+  RCA_n_9/r52/A[61] (RCA_NBIT64_5_DW01_add_0)             0.00       7.41 r
+  RCA_n_9/r52/U1_61/S (FA_X1)                             0.12       7.53 f
+  RCA_n_9/r52/SUM[61] (RCA_NBIT64_5_DW01_add_0)           0.00       7.53 f
+  RCA_n_9/S[61] (RCA_NBIT64_5)                            0.00       7.53 f
+  RCA_n_10/A[61] (RCA_NBIT64_4)                           0.00       7.53 f
+  RCA_n_10/r52/A[61] (RCA_NBIT64_4_DW01_add_0)            0.00       7.53 f
+  RCA_n_10/r52/U1_61/S (FA_X1)                            0.13       7.66 f
+  RCA_n_10/r52/SUM[61] (RCA_NBIT64_4_DW01_add_0)          0.00       7.66 f
+  RCA_n_10/S[61] (RCA_NBIT64_4)                           0.00       7.66 f
+  RCA_n_11/A[61] (RCA_NBIT64_3)                           0.00       7.66 f
+  RCA_n_11/r52/A[61] (RCA_NBIT64_3_DW01_add_0)            0.00       7.66 f
+  RCA_n_11/r52/U1_61/CO (FA_X1)                           0.10       7.76 f
+  RCA_n_11/r52/U1_62/S (FA_X1)                            0.14       7.90 r
+  RCA_n_11/r52/SUM[62] (RCA_NBIT64_3_DW01_add_0)          0.00       7.90 r
+  RCA_n_11/S[62] (RCA_NBIT64_3)                           0.00       7.90 r
+  RCA_n_12/A[62] (RCA_NBIT64_2)                           0.00       7.90 r
+  RCA_n_12/r52/A[62] (RCA_NBIT64_2_DW01_add_0)            0.00       7.90 r
+  RCA_n_12/r52/U1_62/S (FA_X1)                            0.12       8.02 f
+  RCA_n_12/r52/SUM[62] (RCA_NBIT64_2_DW01_add_0)          0.00       8.02 f
+  RCA_n_12/S[62] (RCA_NBIT64_2)                           0.00       8.02 f
+  RCA_n_13/A[62] (RCA_NBIT64_1)                           0.00       8.02 f
+  RCA_n_13/r52/A[62] (RCA_NBIT64_1_DW01_add_0)            0.00       8.02 f
+  RCA_n_13/r52/U1_62/CO (FA_X1)                           0.10       8.12 f
+  RCA_n_13/r52/U1_63/S (FA_X1)                            0.13       8.25 r
+  RCA_n_13/r52/SUM[63] (RCA_NBIT64_1_DW01_add_0)          0.00       8.25 r
+  RCA_n_13/S[63] (RCA_NBIT64_1)                           0.00       8.25 r
+  MUL_OUT[63] (out)                                       0.00       8.25 r
+  data arrival time                                                  8.25
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+

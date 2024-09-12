@@ -1,0 +1,52 @@
+****************************************
+Report : power
+        -analysis_effort low
+Design : register_file_NBIT32_NADDRESS5
+Version: F-2011.09-SP3
+Date   : Tue May  5 02:47:02 2020
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mariagrazia.graziano/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+register_file_NBIT32_NADDRESS5
+                       5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   3.7560 mW   (93%)
+  Net Switching Power  = 274.5267 uW    (7%)
+                         ---------
+Total Dynamic Power    =   4.0305 mW  (100%)
+
+Cell Leakage Power     = 198.7170 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       3.6887e+03            6.0066        8.3069e+04        3.7778e+03  (  89.33%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational     67.2255          268.5199        1.1565e+05          451.3929  (  10.67%)
+--------------------------------------------------------------------------------------------------
+Total          3.7560e+03 uW       274.5266 uW     1.9872e+05 nW     4.2292e+03 uW

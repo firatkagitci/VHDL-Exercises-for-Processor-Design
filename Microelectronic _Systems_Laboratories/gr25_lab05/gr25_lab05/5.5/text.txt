@@ -1,0 +1,3 @@
+The low leakage gates are designed for a low power consumption, as the plot and measures shown the peak currents are lower than the HS gates currents, on the other
+hand the speed decreases, since the current for charging and discharging the capacitance load is lower, it requieres more time(as the measures tell us the delay 
+time are higher for LL than for HS)

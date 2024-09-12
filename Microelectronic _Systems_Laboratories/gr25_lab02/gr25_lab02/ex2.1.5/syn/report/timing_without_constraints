@@ -1,0 +1,75 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -sort_by group
+Design : P4_adder_NBIT32
+Version: F-2011.09-SP3
+Date   : Tue Apr 14 13:58:52 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: INPUT_1[0] (input port)
+  Endpoint: SUM[31] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  P4_adder_NBIT32    5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  INPUT_1[0] (in)                                         0.00       0.00 f
+  Carry_gen/ADD_1[0] (carry_generator_NBIT_GEN32_NBIT_Co8_N_ITERATION5)
+                                                          0.00       0.00 f
+  Carry_gen/U32/Z (XOR2_X1)                               0.08       0.08 f
+  Carry_gen/G_block_0/PG_IN_1 (G_block_0)                 0.00       0.08 f
+  Carry_gen/G_block_0/U2/ZN (AOI21_X1)                    0.04       0.12 r
+  Carry_gen/G_block_0/U1/ZN (INV_X1)                      0.02       0.14 f
+  Carry_gen/G_block_0/G_OUT (G_block_0)                   0.00       0.14 f
+  Carry_gen/G_block_2_0/G_IN (G_block_9)                  0.00       0.14 f
+  Carry_gen/G_block_2_0/U2/ZN (AOI21_X1)                  0.04       0.18 r
+  Carry_gen/G_block_2_0/U1/ZN (INV_X1)                    0.02       0.21 f
+  Carry_gen/G_block_2_0/G_OUT (G_block_9)                 0.00       0.21 f
+  Carry_gen/G_block_3_0/G_IN (G_block_8)                  0.00       0.21 f
+  Carry_gen/G_block_3_0/U2/ZN (AOI21_X1)                  0.04       0.25 r
+  Carry_gen/G_block_3_0/U1/ZN (INV_X1)                    0.04       0.29 f
+  Carry_gen/G_block_3_0/G_OUT (G_block_8)                 0.00       0.29 f
+  Carry_gen/G_block_7_1/G_IN (G_block_7)                  0.00       0.29 f
+  Carry_gen/G_block_7_1/U2/ZN (AOI21_X1)                  0.05       0.34 r
+  Carry_gen/G_block_7_1/U1/ZN (INV_X1)                    0.04       0.38 f
+  Carry_gen/G_block_7_1/G_OUT (G_block_7)                 0.00       0.38 f
+  Carry_gen/G_block_cycle_2_2/G_IN (G_block_5)            0.00       0.38 f
+  Carry_gen/G_block_cycle_2_2/U2/ZN (AOI21_X1)            0.05       0.44 r
+  Carry_gen/G_block_cycle_2_2/U1/ZN (INV_X1)              0.05       0.48 f
+  Carry_gen/G_block_cycle_2_2/G_OUT (G_block_5)           0.00       0.48 f
+  Carry_gen/G_block_cycle_3_3/G_IN (G_block_2)            0.00       0.48 f
+  Carry_gen/G_block_cycle_3_3/U2/ZN (AOI21_X1)            0.06       0.54 r
+  Carry_gen/G_block_cycle_3_3/U1/ZN (INV_X1)              0.04       0.58 f
+  Carry_gen/G_block_cycle_3_3/G_OUT (G_block_2)           0.00       0.58 f
+  Carry_gen/Co[7] (carry_generator_NBIT_GEN32_NBIT_Co8_N_ITERATION5)
+                                                          0.00       0.58 f
+  Sum_gen/Ci[7] (sum_generator_NBIT_GEN32_NBIT_GEN_BLOCK8)
+                                                          0.00       0.58 f
+  Sum_gen/sum_gen_8/Ci_sel (carry_select_block_NBIT4_1)
+                                                          0.00       0.58 f
+  Sum_gen/sum_gen_8/MUX/SEL (MUX21_GENERIC_NBIT4_1)       0.00       0.58 f
+  Sum_gen/sum_gen_8/MUX/U1/Z (MUX2_X1)                    0.07       0.65 r
+  Sum_gen/sum_gen_8/MUX/Y[3] (MUX21_GENERIC_NBIT4_1)      0.00       0.65 r
+  Sum_gen/sum_gen_8/SUM[3] (carry_select_block_NBIT4_1)
+                                                          0.00       0.65 r
+  Sum_gen/SUM[31] (sum_generator_NBIT_GEN32_NBIT_GEN_BLOCK8)
+                                                          0.00       0.65 r
+  SUM[31] (out)                                           0.00       0.65 r
+  data arrival time                                                  0.65
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+

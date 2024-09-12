@@ -1,0 +1,4 @@
+nand_delay HL 49 ps
+nand_delay LH 56 ps
+nand falling time 74 ps
+nand rising time 89 ps

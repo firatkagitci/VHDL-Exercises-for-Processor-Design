@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+        -sort_by group
+Design : RCA_NBIT7
+Version: F-2011.09-SP3
+Date   : Tue Mar 24 20:52:11 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: A[0] (input port)
+  Endpoint: S[6] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RCA_NBIT7          5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  A[0] (in)                                0.00       0.00 f
+  r60/A[0] (RCA_NBIT7_DW01_add_0)          0.00       0.00 f
+  r60/U1_0/CO (FA_X1)                      0.10       0.10 f
+  r60/U1_1/CO (FA_X1)                      0.09       0.19 f
+  r60/U1_2/CO (FA_X1)                      0.09       0.28 f
+  r60/U1_3/CO (FA_X1)                      0.09       0.37 f
+  r60/U1_4/CO (FA_X1)                      0.09       0.47 f
+  r60/U1_5/CO (FA_X1)                      0.09       0.56 f
+  r60/U1_6/S (FA_X1)                       0.13       0.68 r
+  r60/SUM[6] (RCA_NBIT7_DW01_add_0)        0.00       0.68 r
+  S[6] (out)                               0.00       0.69 r
+  data arrival time                                   0.69
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+

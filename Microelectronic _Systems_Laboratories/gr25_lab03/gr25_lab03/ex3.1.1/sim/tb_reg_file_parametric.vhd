@@ -1,0 +1,63 @@
+library IEEE;
+use work.constants.all;
+use IEEE.std_logic_1164.all;
+use work.constants.all;
+use IEEE.numeric_std.all;
+
+entity TBREGISTERFILE is
+end TBREGISTERFILE;
+
+architecture TESTA of TBREGISTERFILE is
+ 
+       signal CLK: std_logic := '0';
+       signal RESET: std_logic;
+       signal ENABLE: std_logic;
+       signal RD1: std_logic;
+       signal RD2: std_logic;
+       signal WR: std_logic;
+       signal ADD_WR: std_logic_vector(N_bit_address-1 downto 0);
+       signal ADD_RD1: std_logic_vector(N_bit_address-1 downto 0);
+       signal ADD_RD2: std_logic_vector(N_bit_address-1 downto 0);
+       signal DATAIN: std_logic_vector(NumBit-1 downto 0);
+       signal OUT1: std_logic_vector(NumBit-1 downto 0);
+       signal OUT2: std_logic_vector(NumBit-1 downto 0);
+
+component register_file
+GENERIC (NBIT: integer:= NumBit;
+		NADDRESS: integer:= N_bit_address);
+ port ( CLK: 		IN std_logic;
+         RESET: 	IN std_logic;
+	 ENABLE: 	IN std_logic;
+	 RD1: 		IN std_logic;
+	 RD2: 		IN std_logic;
+	 WR: 		IN std_logic;
+	 ADD_WR: 	IN std_logic_vector(N_bit_address-1 downto 0);
+	 ADD_RD1: 	IN std_logic_vector(N_bit_address-1 downto 0);
+	 ADD_RD2: 	IN std_logic_vector(N_bit_address-1 downto 0);
+	 DATAIN: 	IN std_logic_vector(NumBit-1 downto 0);
+     OUT1: 		OUT std_logic_vector(NumBit-1 downto 0);
+	 OUT2: 		OUT std_logic_vector(NumBit-1 downto 0));
+ 
+ end component;
+
+begin 
+
+RG:register_file
+GENERIC MAP (NBIT => NumBit, NADDRESS => N_bit_address)
+PORT MAP (DATAIN=>DATAIN,OUT1=>OUT1,OUT2=>OUT2,ADD_RD1=>ADD_RD1,ADD_RD2=>ADD_RD2,ADD_WR=>ADD_WR,RD1=>RD1,RD2=>RD2,WR=>WR,RESET=> RESET,CLK=>CLK,ENABLE=> ENABLE);
+ RESET <= '1','0' after 3.5 ns;
+ ENABLE <= '0','1' after 4 ns, '0' after 13 ns, '1' after 14 ns;
+ WR <= '0','1' after 4 ns, '0' after 9 ns, '1' after 14 ns, '0' after 24 ns;
+ RD1 <= '1','0' after 3 ns, '1' after 9 ns, '0' after 24 ns; 
+ RD2 <= '0','1' after 19 ns;
+ ADD_WR <= "00000","10111"  after 3 ns, "01000" after 13 ns;
+ ADD_RD1 <= "00000","10111"  after 3 ns, "00001"after 13 ns;
+ ADD_RD2<= "00000","11100"  after 3 ns, "01000" after 13 ns;
+ DATAIN<= X"0001100A"  after 3 ns, X"0000011F" after 13 ns;
+
+ PCLOCK : process(CLK)
+ begin
+  CLK <= not(CLK) after 0.5 ns; 
+ end process;
+
+end TESTA;
