@@ -27,8 +27,10 @@ P_ALU: process (FUNC, DATA1, DATA2)
     case FUNC is
 	when ADD 	=> OUTALU <= DATA1 + DATA2; 
 	when SUB 	=> OUTALU <= DATA1 - DATA2;
-	when MULT 	=> OUTALU <= std_logic_vector(to_unsigned((to_integer(unsigned(DATA1((N/2)-1 downto 0))) * to_integer(unsigned(DATA2((N/2)-1 downto 0)))),N)) ;
--- to perform the multiplication two conversion of type are needed the first one from std_logic_vector to unsigned and to integer, the second one the reverse conversion for having the result in std_logic_vector, note that the vector used are half of their lenght  
+	when MULT 	=> OUTALU <= std_logic_vector(unsigned(DATA1((N/2)-1 downto 0)) * unsigned(DATA2((N/2)-1 downto 0)));
+
+--( to perform the multiplication two conversion of type are needed the first one from std_logic_vector to unsigned and to integer,
+-- the second one the reverse conversion for having the result in std_logic_vector, note that the vector used are half of their lenght  )
 	when BITAND 	=> OUTALU <= DATA1 and DATA2; -- bitwise and
 	when BITOR 	=> OUTALU <= DATA1 or DATA2; -- bitwise or
 	when BITXOR 	=> OUTALU <= DATA1 xor DATA2; -- bitwise xor
