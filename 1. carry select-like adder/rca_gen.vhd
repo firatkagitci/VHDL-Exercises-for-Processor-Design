@@ -6,9 +6,10 @@ entity rca_gen is
 	generic (
 	constant N: integer :=4 
 	);
-	port (	
-			a	: 	in std_logic_vector(N-1 downto 0);
-			b	: 	in std_logic_vector(N-1 downto 0);
+	port (
+			
+			a	: 	in std_logic_vector (N-1 downto 0);
+			b	: 	in std_logic_vector (N-1 downto 0);
 			cin	: 	in std_logic;
 			s	: 	out std_logic_vector (N-1 downto 0);	
 			cout: 	out std_logic			

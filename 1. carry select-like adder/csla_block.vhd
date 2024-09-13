@@ -8,15 +8,12 @@ entity csla_block is
 	
 	a			: in std_logic_vector (3 downto 0);
 	b			: in std_logic_vector (3 downto 0);
-	
 	C_sel 		: in std_logic;
-	Sum			: out std_logic_vector (3 downto 0);
+	Sum			: out std_logic_vector (3 downto 0)
 	
 	);
 
-
 end csla_block;
-
 
 architecture structural of csla_block is 
 
@@ -56,15 +53,17 @@ architecture structural of csla_block is
 	signal result_1 : std_logic_vector (N-1  downto 0); -- result for carry 1
 	signal carry_0	: std_logic := '0';
 	signal carry_1	: std_logic := '1';
-	signal s		: std_logic_vector (N-1  downto 0); -- final result of the block
-	signal c_sel 	: std_logic;  -- actual signal input
-	signal a : std_logic_vector (N-1  downto 0);
-	signal b : std_logic_vector (N-1  downto 0);
 	
 begin 
--- instance of rca_gen
-u1: rca_gen port map (a => a, b => b, carry_0 => cin, result_0 => s);	
-u2: rca_gen port map (a => a, b => b, carry_1 => cin, result_1 => s);	
+-- instances of rca_gen
+u1: rca_gen generic map (N => N)
+	port map (a => a, b => b, cin => carry_0, s => result_0, cout => open);	
+	
+u2: rca_gen generic map (N => N)
+	port map (a => a, b => b, cin => carry_1, s => result_1, cout => open);
 
+-- instance of mux2to1_gen
+u3: mux2to1_gen	generic map (N => N)
+	port map (I1 => result_0, I2 => result_1, SEL => C_sel, Y => sum);
 
 end architecture structural;
