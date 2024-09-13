@@ -14,6 +14,7 @@ entity fa is
 	
 end fa;
 
+
 architecture behave of fa is 
 
 begin 
