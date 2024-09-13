@@ -70,6 +70,12 @@ rca_instance:	rca_gen
 		
 		wait for 100 ns;
 		
+			
+		a <= x"10000000";
+		b <= x"00000000";
+		cin <= '0';
+		
+		wait for 100 ns;
 		end process;
 		
 		end architecture test; 

@@ -3,8 +3,8 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
 entity RCA is 
-	generic (DRCAS : 	Time := 0 ns;
-	         DRCAC : 	Time := 0 ns);
+	generic (DRCAS : 	Time := 0 ns; --delay of sum 
+	         DRCAC : 	Time := 0 ns); --delay of carry
 	Port (	A:	In	std_logic_vector(5 downto 0);
 		B:	In	std_logic_vector(5 downto 0);
 		Ci:	In	std_logic;

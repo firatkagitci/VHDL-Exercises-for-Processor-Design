@@ -47,6 +47,11 @@ begin
 end STRUCTURAL;
 
 
+
+
+
+
+
 architecture BEHAVIORAL of RCA is
 signal sum : std_logic_vector(NBIT downto 0);
 signal ai : std_logic_vector(NBIT downto 0);
