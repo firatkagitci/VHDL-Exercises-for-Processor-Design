@@ -13,11 +13,11 @@ entity PG_BLOCK is
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
 	Pij		: out std_logic;	
-	Gij		: out std_logic;
+	Gij		: out std_logic
 	
 	);
 
-end G_BLOCK;
+end PG_BLOCK;
 
 architecture BEHAVIORAL of PG_BLOCK is
 begin

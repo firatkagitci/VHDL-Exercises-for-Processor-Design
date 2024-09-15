@@ -16,7 +16,7 @@ end entity PG_network;
 architecture behav of PG_network is 
 begin
 
-	g <= a and b 
-	p <= a xor b 
+	g <= a and b; 
+	p <= a xor b; 
 
 end architecture behav;
