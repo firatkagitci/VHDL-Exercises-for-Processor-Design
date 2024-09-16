@@ -23,7 +23,7 @@ component G_block is
 	Gk1j	: in std_logic;
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
-	Gij		: out buffer std_logic
+	Gij		: out std_logic
 	
 	--Gij <= (Gk1j and Pik) or Gik;
 	
@@ -38,8 +38,8 @@ component PG_block is
 	Pk1j	: in std_logic;
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
-	Pij		: out buffer std_logic;	
-	Gij		: out buffer std_logic
+	Pij		: out std_logic;	
+	Gij		: out std_logic
 		
 	--Pij <= Pk1j and Pik;
 	
@@ -105,14 +105,14 @@ pg_network_: for i in 1 to N generate
 G_block_1: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => p_sig_1(1)); --This Gij will be one bit in second level of the tree
 
 	-- PG blocks in first level
-PG_block_1: for i in 2 to M generate
+PG_block_1: for i in 3 to M generate
 		pgblock: PG_block port map (
-				Gk1j=>g_sig(i),
-				Pk1j=>p_sig(i),
-				Pik =>p_sig(i+1),
-				Gik	=>g_sig(i+1),
-				Pij	=>p_sig_1(i),	
-				Gij	=>g_sig_1(i)	
+				Gk1j=>g_sig(i-1),
+				Pk1j=>p_sig(i-1),
+				Pik =>p_sig(i),
+				Gik	=>g_sig(i),
+				Pij	=>p_sig_1(i-1),	
+				Gij	=>g_sig_1(i-1)	
 		);
 	
 	-- Single G block in the second level 
@@ -125,12 +125,12 @@ G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_si
 
 PG_block_2: for i in 2 to 8 generate
 		pgblock: PG_block port map (
-				Gk1j=>g_sig(i),
-				Pk1j=>p_sig(i),
-				Pik =>p_sig(i+1),
-				Gik	=>g_sig(i+1),
-				Pij	=>p_sig_1(i),	
-				Gij	=>g_sig_1(i)	
+				Gk1j=>g_sig_1(i),
+				Pk1j=>p_sig_1(i),
+				Pik =>p_sig_1(i+1),
+				Gik	=>g_sig_1(i+1),
+				Pij	=>p_sig_2(i),	
+				Gij	=>g_sig_2(i)	
 		);
 
 end architecture structural;
