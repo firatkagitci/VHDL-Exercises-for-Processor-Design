@@ -86,6 +86,9 @@ end component PG_network;
 
 
 
+
+	signal temp1: std_logic;
+	signal temp2: std_logic;
 begin
 
     -- Generate PG_network instances
@@ -113,7 +116,10 @@ PG_block_1: for i in 2 to M generate
 		);
 	
 	-- Single G block in the second level 
-G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_sig_1(2), Gij => p_sig_2(1), Gij => carry_out(0));
+G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_sig_1(2), Gij => temp1);
+	
+	p_sig_2(1) <= temp1;
+	carry_out(0) <= temp1;
 
 	-- PG blocks in the second level
 
