@@ -65,23 +65,24 @@ end component PG_network;
     -- Declare signal vectors for propagate and generate signals
    
 -- first level signals
-	type SignalVector_1 is array (N downto 1) of std_logic;
-    signal p_sig, g_sig : SignalVector;
+	type SignalVector is array (N downto 1) of std_logic;
+    signal p_sig, g_sig : SignalVector_1;
 	
 --second level signals
 	constant M: integer := 16;
-	type SignalVector_2 is array (M downto 1) of std_logic;
-	signal p_sig_1: SignalVector;
+	type SignalVector_1 is array (M downto 1) of std_logic;
+	signal p_sig_1: SignalVector_1;
 	
-	type SignalVector is array (M downto 2) of std_logic;
-	signal g_sig_1: SignalVector;
+	type SignalVector_1g is array (M downto 2) of std_logic;
+	signal g_sig_1: SignalVector_1g;
 
--- third level signals	
+-- third level signals
 	constant P: integer := 12;
-	type SignalVector is array (P downto 1) of std_logic;
-    signal p_sig_2: SignalVector;
-	type SignalVector is array (P downto 2) of std_logic;
-	signal g_sig_2: SignalVector;
+	type SignalVector_2 is array (P downto 1) of std_logic;
+    signal p_sig_2: SignalVector_2;
+	
+	type SignalVector_2g is array (P downto 2) of std_logic;
+	signal g_sig_2: SignalVector_2g;
 
 
 
@@ -99,7 +100,7 @@ pg_network_: for i in 1 to N generate
 
 	-- Single G block in the first level 
 G_block_1: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => p_sig_1(1)); --This Gij will be one bit in second level of the tree
-
+	-- PG blocks in the first level 
 PG_block_: for i in 2 to M generate
 		pgblock: PG_block port map (
 				Gk1j=>g_sig(i),
@@ -114,7 +115,9 @@ PG_block_: for i in 2 to M generate
 	
 
 -- Single G block in the first level 
-G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => c0, Gik => g_sig_1(2), Gij => p_sig_2(1), open => g_sig_2(1));
+G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => c0, Gik => g_sig_1(2), Gij => p_sig_2(1));
+
+
 
 
 
