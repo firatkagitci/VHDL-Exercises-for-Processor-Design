@@ -5,8 +5,8 @@ entity carry_gen is
 
 	port(
 	
-	ai	: in std_logic_vector (31 downto 0);
-	bi	: in std_logic_vector (31 downto 0);
+	ai	: in std_logic_vector (32 downto 1);
+	bi	: in std_logic_vector (32 downto 1);
 	c0	: in std_logic;
 	carry_out : out std_logic_vector (7 downto 0)
 	
@@ -74,7 +74,7 @@ end component PG_network;
 
 begin
     -- Generate PG_network instances
-    generate_1: for i in 0 to N-1 generate
+    generate_1: for i in 1 to N generate
         network: PG_network port map (
             a => ai(i),  -- Input bit from operand A
             b => bi(i),  -- Input bit from operand B
