@@ -9,7 +9,7 @@ entity G_BLOCK is
 	Gk1j	: in std_logic;
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
-	Gij		: out std_logic
+	Gij		: out buffer std_logic
 	
 	);
 	

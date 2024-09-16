@@ -12,8 +12,8 @@ entity PG_BLOCK is
 	Pk1j	: in std_logic;
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
-	Pij		: out std_logic;	
-	Gij		: out std_logic
+	Pij		: out buffer std_logic;	
+	Gij		: out buffer std_logic
 	
 	);
 
