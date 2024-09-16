@@ -81,18 +81,33 @@ end component PG_network;
 begin
 
     -- Generate PG_network instances
-    generate_1: for i in 1 to N generate
+pg_network_: for i in 1 to N generate
         network: PG_network port map (
-            a => ai(i),  -- Input bit from operand A
-            b => bi(i),  -- Input bit from operand B
-            p => p_sig(i),  -- Propagate signal
-            g => g_sig(i)   -- Generate signal
+				a => ai(i),  -- Input bit from operand A
+				b => bi(i),  -- Input bit from operand B
+				p => p_sig(i),  -- Propagate signal
+				g => g_sig(i)   -- Generate signal
         );
-    end generate;
+ end generate;
 
-Gblock: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => p_sig_1(1)); --This Gij will be 
+	-- Single G block in the first level 
+G_block_1: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => p_sig_1(1), open => g_sig_1(1)); --This Gij will be one bit in second level of the tree
 
+PG_block_: for i in 2 to M generate
+		pgblock: PG_block port map (
+				Gk1j=>g_sig(2),
+				Pk1j=>p_sig(2),
+				Pik =>p_sig(3),
+				Gik	=>g_sig(3),
+				Pij	=>p_sig_1(2),	
+				Gij	=>g_sig_1(2)	
+		);
+		
+	-- Second single G block in the second level 
+	
 
+-- Single G block in the first level 
+G_block_2: G_block port map( Pik => p_sig_2(2), Gk1j => c0, Gik => g_sig_2(2), Gij => p_sig_2(1), open => g_sig_1(1));
 
 
 
