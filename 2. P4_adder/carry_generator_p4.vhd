@@ -63,16 +63,23 @@ end component PG_network;
     constant N: integer := 32;
 
     -- Declare signal vectors for propagate and generate signals
-    type SignalVector is array (N-1 downto 1) of std_logic;
+    type SignalVector is array (N downto 1) of std_logic;
     signal p_sig, g_sig : SignalVector;
 
 	constant M: integer := 16;
-	type SignalVector is array (M-1 downto ) of std_logic;
+	type SignalVector is array (M downto 1) of std_logic;
     signal p_sig_1, g_sig_1 : SignalVector;
+	
+	
+	constant P: integer := 12;
+	type SignalVector is array (P downto 1) of std_logic;
+    signal p_sig_1, g_sig_1 : SignalVector;
+	
 
 
 
 begin
+
     -- Generate PG_network instances
     generate_1: for i in 1 to N generate
         network: PG_network port map (
@@ -82,9 +89,15 @@ begin
             g => g_sig(i)   -- Generate signal
         );
     end generate;
-	
-	
-G_block_first_stage: G_block port map( Pik => p_sig(0), Gk1j => c0, Gik => g_sig(0), Gij => p (0) );
+
+Gblock: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => p_sig_1(1)); --This Gij will be 
+
+
+
+
+
+
+
 
 
 
