@@ -33,6 +33,7 @@ end component G_block;
 component PG_block is 
 	port(
 	
+	
 	Gk1j	: in std_logic;
 	Pk1j	: in std_logic;
 	Pik 	: in std_logic;
