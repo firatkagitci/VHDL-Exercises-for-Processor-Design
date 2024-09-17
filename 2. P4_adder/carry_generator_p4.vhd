@@ -2,16 +2,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity carry_gen is 
-
 	port(
-	
 	ai	: in std_logic_vector (32 downto 1);
 	bi	: in std_logic_vector (32 downto 1);
 	c0	: in std_logic;
 	carry_out : out std_logic_vector (7 downto 0)
-	
 	);
-	
 end carry_gen;
 
 architecture structural of carry_gen is 
@@ -24,7 +20,6 @@ component G_block is
 	Gij		: out std_logic
 	--Gij <= (Gk1j and Pik) or Gik;
 	);
-	
 end component G_block;
 
 component PG_block is 
@@ -41,7 +36,6 @@ component PG_block is
 end component PG_block;
 
 component PG_network is 
-
 	port (
 	a	: in std_logic; 
 	b	: in std_logic;
@@ -50,7 +44,6 @@ component PG_network is
 	--g <= a and b; 
 	--p <= a xor b; 
 	);
-
 end component PG_network;
 
     constant N: integer := 32;
