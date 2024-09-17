@@ -17,17 +17,18 @@ end carry_gen;
 
 architecture structural of carry_gen is 
 
-component G_block is 
+component G_block is
+ 
 	port(
-	
 	Gk1j	: in std_logic;
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
 	Gij		: out std_logic
 	
 	--Gij <= (Gk1j and Pik) or Gik;
-	
+
 	);
+	
 end component G_block;
 
 component PG_block is 
@@ -77,7 +78,7 @@ end component PG_network;
 	signal g_sig_1: SignalVector_1g;
 
 -- third level signals
-	constant P: integer := 12;
+	constant P: integer := 8;
 	type SignalVector_2 is array (P downto 2) of std_logic;
     signal p_sig_2: SignalVector_2;
 	
@@ -87,18 +88,18 @@ end component PG_network;
 
 -- fourth level signals
 	constant Z: integer := 4;
-	type SignalVector_3 is array (P downto 2) of std_logic;
+	type SignalVector_3 is array (Z downto 2) of std_logic;
     signal p_sig_3: SignalVector_3;
 	
-	type SignalVector_3g is array (P downto 1) of std_logic;
+	type SignalVector_3g is array (Z downto 1) of std_logic;
 	signal g_sig_3: SignalVector_3g;
 	
 -- fifth level signals
 	constant Y: integer := 3;
-	type SignalVector_4 is array (P downto 2) of std_logic;
+	type SignalVector_4 is array (Y downto 2) of std_logic;
     signal p_sig_4: SignalVector_4;
 	
-	type SignalVector_4g is array (P downto 1) of std_logic;
+	type SignalVector_4g is array (Y downto 1) of std_logic;
 	signal g_sig_4: SignalVector_4g;
 
 
@@ -129,8 +130,8 @@ PG_block_1: for i in 3 to M generate
 				Pk1j=>p_sig(i-1),
 				Pik =>p_sig(i),
 				Gik	=>g_sig(i),
-				Pij	=>p_sig_1(i-1),	
-				Gij	=>g_sig_1(i-1)	
+				Pij	=>p_sig_1(i),	
+				Gij	=>g_sig_1(i)	
 		);
 		end generate;
 	 
@@ -142,14 +143,17 @@ G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_si
 
 	-- PG blocks in the second level
 
-PG_block_2: for i in 3 to 7 generate
-		pgblock: PG_block port map (
+PG_block_2: for i in 3 to 16 generate
+			if i mod 2 = 1 then  -- Only process even values of i (i.e., 3, 5, 7, ...)
+		
+		pgblock: PG_block port map ( 
 				Gk1j=>g_sig_1(i),
 				Pk1j=>p_sig_1(i),
 				Pik =>p_sig_1(i+1),
 				Gik	=>g_sig_1(i+1),
-				Pij	=>p_sig_2(i),	
-				Gij	=>g_sig_2(i)	
+				Pij	=>p_sig_2(i-1),	
+				Gij	=>g_sig_2(i-1)	
+		end if;
 		);
 			end generate;		
 
@@ -232,6 +236,5 @@ G_block_4_2: G_block port map( Pik => p_sig_3(2), Gk1j => g_sig_3(1) , Gik => g_
 	G_block_5_3: G_block port map( Pik => p_sig_4(2), Gk1j => g_sig_4(1) , Gik => g_sig_4(2), Gij => carry_out(6));	
 	G_block_5_4: G_block port map( Pik => p_sig_4(3), Gk1j => g_sig_4(1) , Gik => g_sig_4(3), Gij => carry_out(7));		
 	
-		
 		
 end architecture structural;
