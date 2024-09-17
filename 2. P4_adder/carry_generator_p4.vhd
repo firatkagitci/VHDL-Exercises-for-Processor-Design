@@ -110,7 +110,7 @@ end component PG_network;
 begin
 
     -- Generate PG_network instances --level zero
-pg_network_: for i in 1 to N generate
+pg_network_1: for i in 1 to N generate
         network: PG_network port map (
 				a => ai(i),  -- Input bit from operand A
 				b => bi(i),  -- Input bit from operand B
@@ -132,6 +132,7 @@ PG_block_1: for i in 3 to M generate
 				Pij	=>p_sig_1(i-1),	
 				Gij	=>g_sig_1(i-1)	
 		);
+		end generate;
 	 
 	-- Single G block in the second level 
 G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_sig_1(2), Gij => temp1);
@@ -150,7 +151,7 @@ PG_block_2: for i in 2 to 7 generate
 				Pij	=>p_sig_2(i),	
 				Gij	=>g_sig_2(i)	
 		);
-					
+			end generate;		
 
 
 
@@ -181,7 +182,7 @@ G_block_3: G_block port map( Pik => p_sig_2(2), Gk1j => g_sig_2(1) , Gik => g_si
 				Gij	=>g_sig_3(3)	
 		);
 		
-		pgblock_3_2: PG_block port map (
+		pgblock_3_3: PG_block port map (
 				Gk1j=>g_sig_2(7),
 				Pk1j=>p_sig_2(7),
 				Pik =>p_sig_2(8),
@@ -199,6 +200,7 @@ G_block_4_1: G_block port map( Pik => p_sig_2(3), Gk1j => g_sig_3(1) , Gik => g_
 G_block_4_2: G_block port map( Pik => p_sig_3(2), Gk1j => g_sig_3(1) , Gik => g_sig_3(2), Gij => temp3);	
 	
 	carry_out(3) <= temp3;
+	g_sig_4(1) <= temp3;
 	
 	-- Two PG blocks in the fourth level 
 		
@@ -213,7 +215,7 @@ G_block_4_2: G_block port map( Pik => p_sig_3(2), Gk1j => g_sig_3(1) , Gik => g_
 		);
 			
 				
-		pgblock_4_1: PG_block port map (
+		pgblock_4_2: PG_block port map (
 				Gk1j=>g_sig_3(3),
 				Pk1j=>p_sig_3(3),
 				Pik =>p_sig_3(4),
@@ -229,11 +231,7 @@ G_block_4_2: G_block port map( Pik => p_sig_3(2), Gk1j => g_sig_3(1) , Gik => g_
 	G_block_5_2: G_block port map( Pik => p_sig_3(3), Gk1j => g_sig_4(1) , Gik => g_sig_3(3), Gij => carry_out(5));		
 	G_block_5_3: G_block port map( Pik => p_sig_4(2), Gk1j => g_sig_4(1) , Gik => g_sig_4(2), Gij => carry_out(6));	
 	G_block_5_4: G_block port map( Pik => p_sig_4(3), Gk1j => g_sig_4(1) , Gik => g_sig_4(3), Gij => carry_out(7));		
-		
-		
-		
-		
-		
+	
 		
 		
 end architecture structural;
