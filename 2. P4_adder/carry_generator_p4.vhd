@@ -17,32 +17,25 @@ end carry_gen;
 architecture structural of carry_gen is 
 
 component G_block is
- 
 	port(
 	Gk1j	: in std_logic;
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
 	Gij		: out std_logic
-	
 	--Gij <= (Gk1j and Pik) or Gik;
-
 	);
 	
 end component G_block;
 
 component PG_block is 
 	port(
-	
-	
 	Gk1j	: in std_logic;
 	Pk1j	: in std_logic;
 	Pik 	: in std_logic;
 	Gik		: in std_logic;
 	Pij		: out std_logic;	
 	Gij		: out std_logic
-		
 	--Pij <= Pk1j and Pik;
-	
 	--Gij <= (Gk1j and Pik) or Gik;
 	);
 end component PG_block;
@@ -153,7 +146,7 @@ pgblock1_7:	PG_block port map(Gk1j=>g_sig_1(15), Pk1j=>p_sig_1(15), Pik =>p_sig_
 	-- Single G block in the third level 
 G_block_3: G_block port map( Pik => p_sig_2(2), Gk1j => g_sig_2(1) , Gik => g_sig_2(2), Gij => temp2);
 	
-	g_sig_3(1) <= temp2;
+	g_sig_3(1)   <= temp2;
 	carry_out(1) <= temp2;
 
 	-- PG blocks in the third level
