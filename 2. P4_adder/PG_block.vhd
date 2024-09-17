@@ -2,12 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
 
-
-
 entity PG_BLOCK is 
 
 	port(
-	
+
 	Gk1j	: in std_logic;
 	Pk1j	: in std_logic;
 	Pik 	: in std_logic;
