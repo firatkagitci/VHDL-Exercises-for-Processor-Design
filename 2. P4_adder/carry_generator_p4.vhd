@@ -91,7 +91,7 @@ end component PG_network;
 	signal temp2: std_logic;
 begin
 
-    -- Generate PG_network instances
+    -- Generate PG_network instances --level zero
 pg_network_: for i in 1 to N generate
         network: PG_network port map (
 				a => ai(i),  -- Input bit from operand A
@@ -123,7 +123,7 @@ G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_si
 
 	-- PG blocks in the second level
 
-PG_block_2: for i in 2 to 8 generate
+PG_block_2: for i in 2 to 7 generate
 		pgblock: PG_block port map (
 				Gk1j=>g_sig_1(i),
 				Pk1j=>p_sig_1(i),
@@ -132,5 +132,32 @@ PG_block_2: for i in 2 to 8 generate
 				Pij	=>p_sig_2(i),	
 				Gij	=>g_sig_2(i)	
 		);
+					
+
+	-- Single G block in the third level 
+G_block_3: G_block port map( Pik => p_sig_2(2), Gk1j => g_sig_2(1) , Gik => g_sig_2(2), Gij => temp2);
+	
+	p_sig_3(1) <= temp2;
+	carry_out(1) <= temp2;
+
+	-- PG blocks in the second level
+
+PG_block_3: for i in 2 to 7 generate
+		pgblock: PG_block port map (
+				Gk1j=>g_sig_2(i),
+				Pk1j=>p_sig_2(i),
+				Pik =>p_sig_2(i+1),
+				Gik	=>g_sig_2(i+1),
+				Pij	=>p_sig_3(i),	
+				Gij	=>g_sig_3(i)	
+		);
+		
+		
+		
+		
+		
+		
+
+
 
 end architecture structural;
