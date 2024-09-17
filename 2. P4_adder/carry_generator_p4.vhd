@@ -151,8 +151,8 @@ PG_block_2: for i in 3 to 16 generate
 				Pk1j=>p_sig_1(i),
 				Pik =>p_sig_1(i+1),
 				Gik	=>g_sig_1(i+1),
-				Pij	=>p_sig_2(i-1),	
-				Gij	=>g_sig_2(i-1)	
+				Pij	=>p_sig_2(j),	
+				Gij	=>g_sig_2(j)	
 		end if;
 		);
 			end generate;		
