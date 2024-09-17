@@ -5,6 +5,9 @@ entity p4_adder is
 
 	inp1: in std_logic_vector(32 downto 1);
 	inp2: in std_logic_vector(32 downto 1);
+	result: out std_logic_vector(32 downto 1);
+	carry_in: in std_logic;
+	carry_o: out std_logic;
 	
 
 end entity p4_adder;
@@ -29,7 +32,12 @@ component csla is
 	);
 end component;
 
+signal temp5: std_logic_vector (7 downto 0);
+
 begin
-u1 : carry_gen port map(ai => inp1, bi => inp2, );
+u1 : carry_gen port map(ai => inp1, bi => inp2, c0 => carry_in, carry_out => temp5);
+
+u2 : csla port map(Cselect => temp5, a_32 => );
+
 
 end architecture structural;
