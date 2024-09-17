@@ -144,7 +144,7 @@ G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_si
 	-- PG blocks in the second level
 
 PG_block_2: for i in 3 to 16 generate
-			if i mod 2 = 1 then  -- Only process even values of i (i.e., 3, 5, 7, ...)
+			if i mod 2 = 1 then  -- Only process odd values of i (i.e., 3, 5, 7, ...)
 		
 		pgblock: PG_block port map ( 
 				Gk1j=>g_sig_1(i),
