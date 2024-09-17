@@ -6,6 +6,7 @@ end carry_gen_tb;
 
 
 architecture test of carry_gen_tb is 
+
 	component carry_gen is
 		port(
 		
@@ -15,23 +16,27 @@ architecture test of carry_gen_tb is
 		carry_out : out std_logic_vector (7 downto 0)
 		
 		);
-	end component carry_gen;
+	end component;
 	
 	signal in1: std_logic_vector(32 downto 1);
 	signal in2: std_logic_vector(32 downto 1);
 	signal carr: std_logic;
+	signal carry_out_signal: std_logic_vector(7 downto 0);
 
 	begin 
 	
+u1:	carry_gen port map (ai => in1, bi => in2, c0 => carr, carry_out => carry_out_signal); 
+
+	
 	process 
 	begin
-	
+
 	in1 <= x"FFFFFFFF";
 	in2 <= x"00000001";
 	carr<= '0';
 	
-	
-	
+	wait for 200 ns;
+ 	
 	end process;
 	
 
