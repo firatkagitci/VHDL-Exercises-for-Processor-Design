@@ -142,7 +142,7 @@ G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_si
 
 	-- PG blocks in the second level
 
-PG_block_2: for i in 2 to 7 generate
+PG_block_2: for i in 3 to 7 generate
 		pgblock: PG_block port map (
 				Gk1j=>g_sig_1(i),
 				Pk1j=>p_sig_1(i),
