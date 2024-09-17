@@ -123,6 +123,7 @@ pg_network_1: for i in 1 to N generate
 G_block_1: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => g_sig_1(1)); --This Gij will be one bit in second level of the tree
 
 
+
 pgblock_1: 	PG_block port map (
 				Gk1j=>g_sig(2),
 				Pk1j=>p_sig(2),

@@ -27,6 +27,7 @@ architecture test of carry_gen_tb is
 	
 u1:	carry_gen port map (ai => in1, bi => in2, c0 => carr, carry_out => carry_out_signal); 
 
+
 	
 	process 
 	begin
