@@ -102,7 +102,7 @@ pg_network_: for i in 1 to N generate
  end generate;
 
 	-- Single G block in the first level 
-G_block_1: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => p_sig_1()); --This Gij will be one bit in second level of the tree
+G_block_1: G_block port map( Pik => p_sig(1), Gk1j => c0, Gik => g_sig(1), Gij => g_sig_1(1)); --This Gij will be one bit in second level of the tree
 
 	-- PG blocks in first level
 PG_block_1: for i in 3 to M generate
@@ -114,7 +114,7 @@ PG_block_1: for i in 3 to M generate
 				Pij	=>p_sig_1(i-1),	
 				Gij	=>g_sig_1(i-1)	
 		);
-	
+	 
 	-- Single G block in the second level 
 G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_sig_1(2), Gij => temp1);
 	
