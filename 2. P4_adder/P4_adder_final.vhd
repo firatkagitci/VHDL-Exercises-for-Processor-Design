@@ -37,7 +37,7 @@ signal temp5: std_logic_vector (7 downto 0);
 begin
 u1 : carry_gen port map(ai => inp1, bi => inp2, c0 => carry_in, carry_out => temp5);
 
-u2 : csla port map(Cselect => temp5, a_32 => );
+u2 : csla port map(Cselect => temp5, a_32 => inp1, b_32 => inp2, result_32 => result);
 
 
 end architecture structural;
