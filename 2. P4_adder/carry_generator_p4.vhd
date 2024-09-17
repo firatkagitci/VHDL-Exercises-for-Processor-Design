@@ -132,7 +132,7 @@ PG_block_1: for i in 3 to M generate
 				Pij	=>p_sig_1(i-1),	
 				Gij	=>g_sig_1(i-1)	
 		);
-		end generate;
+		end generate
 	 
 	-- Single G block in the second level 
 G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_sig_1(2), Gij => temp1);
