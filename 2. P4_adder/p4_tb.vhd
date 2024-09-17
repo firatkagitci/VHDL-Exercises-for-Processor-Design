@@ -32,7 +32,7 @@ u1:	carry_gen port map (ai => in1, bi => in2, c0 => carr, carry_out => carry_out
 	begin
 
 	in1 <= x"FFFFFFFF";
-	in2 <= x"00000000";
+	in2 <= x"00000001";
 	carr<= '0';
 	
 	wait for 400 ns;
