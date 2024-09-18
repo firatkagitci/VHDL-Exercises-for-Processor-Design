@@ -60,7 +60,7 @@ u1: rca_gen generic map (N => N)
 	
 u2: rca_gen generic map (N => N)
 	port map (a => a, b => b, cin => carry_1, s => result_1, cout => open);
-
+	
 -- instance of mux2to1_gen
 u3: mux2to1_gen	generic map (N => N)
 	port map (I1 => result_0, I2 => result_1, SEL => C_sel, Y => sum);
