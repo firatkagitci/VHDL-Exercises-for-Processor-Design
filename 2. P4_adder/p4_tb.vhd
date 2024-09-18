@@ -4,7 +4,6 @@ use ieee.std_logic_1164.all;
 entity carry_gen_tb is
 end carry_gen_tb;
 
-
 architecture test of carry_gen_tb is 
 
 	component carry_gen is
@@ -35,7 +34,6 @@ u1:	carry_gen port map (ai => in1, bi => in2, c0 => carr, carry_out => carry_out
 	carr<= '0';
 	
 	wait for 400 ns;
- 	
 	end process;
 	
 end architecture test;
