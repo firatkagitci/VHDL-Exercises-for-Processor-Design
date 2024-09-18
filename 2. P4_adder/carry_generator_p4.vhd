@@ -146,5 +146,6 @@ G_block_4_2: G_block port map( Pik => p_sig_3(2), Gk1j => g_sig_3(1) , Gik => g_
 	G_block_5_1: G_block port map( Pik => p_sig_2(5), Gk1j => g_sig_4(1) , Gik => g_sig_2(5), Gij => carry_out(4));
 	G_block_5_2: G_block port map( Pik => p_sig_3(3), Gk1j => g_sig_4(1) , Gik => g_sig_3(3), Gij => carry_out(5));		
 	G_block_5_3: G_block port map( Pik => p_sig_4(2), Gk1j => g_sig_4(1) , Gik => g_sig_4(2), Gij => carry_out(6));	
-	G_block_5_4: G_block port map( Pik => p_sig_4(3), Gk1j => g_sig_4(1) , Gik => g_sig_4(3), Gij => carry_out(7));			
+	G_block_5_4: G_block port map( Pik => p_sig_4(3), Gk1j => g_sig_4(1) , Gik => g_sig_4(3), Gij => carry_out(7));
+	--last one will create carry bit 32, that is the final carry out			
 end architecture structural;
