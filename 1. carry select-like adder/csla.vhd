@@ -9,7 +9,8 @@ entity csla is
 	Cselect		: in std_logic_vector (7 downto 0);
 	a_32	 	: in std_logic_vector (31 downto 0);
 	b_32 		: in std_logic_vector (31 downto 0);
-	result_32	: out std_logic_vector (31 downto 0)
+	result_32	: out std_logic_vector (31 downto 0);
+	CIN			: in std_logic
 	
 	);
 
@@ -33,7 +34,7 @@ begin
 
 -- instances of csla_block										--Cselect(0) is the carry in
 	
-u1: csla_block port map (a => a_32(3 downto 0),   b => b_32(3 downto 0),   C_sel => Cselect(0), Sum => result_32(3 downto 0));
+u1: csla_block port map (a => a_32(3 downto 0),   b => b_32(3 downto 0),   C_sel => CIN		  , Sum => result_32(3 downto 0));
 u2: csla_block port map (a => a_32(7 downto 4),   b => b_32(7 downto 4),   C_sel => Cselect(1), Sum => result_32(7 downto 4));
 u3: csla_block port map (a => a_32(11 downto 8),  b => b_32(11 downto 8),  C_sel => Cselect(2), Sum => result_32(11 downto 8));
 u4: csla_block port map (a => a_32(15 downto 12), b => b_32(15 downto 12), C_sel => Cselect(3), Sum => result_32(15 downto 12)); 
