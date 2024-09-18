@@ -19,7 +19,7 @@ component carry_gen is
 	ai	: in std_logic_vector (32 downto 1);
 	bi	: in std_logic_vector (32 downto 1);
 	c0	: in std_logic;
-	carry_out : out std_logic_vector (8 downto 0)
+	carry_out : out std_logic_vector (7 downto 0)
 	);
 end component;
 
@@ -34,9 +34,10 @@ component csla is
 	);
 end component;
 
-signal temp5: std_logic_vector (8 downto 0);
+signal temp5: std_logic_vector (7 downto 1);
 
 begin
+
 u1 : carry_gen port map(ai => inp1, bi => inp2, c0 => carry_in, carry_out => temp5);
 
 u2 : csla port map(Cselect => temp5, a_32 => inp1, b_32 => inp2, result_32 => result);
