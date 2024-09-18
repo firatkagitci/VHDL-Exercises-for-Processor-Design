@@ -2,13 +2,13 @@ library ieee;
 use ieee.std_logic_1164.all; 
 
 entity p4_adder is 
-
+port(
 	inp1: in std_logic_vector(32 downto 1);
 	inp2: in std_logic_vector(32 downto 1);
 	result: out std_logic_vector(32 downto 1);
 	carry_in: in std_logic;
-	carry_o: out std_logic;
-	
+	carry_o: out std_logic
+	);
 
 end entity p4_adder;
 
@@ -40,7 +40,6 @@ begin
 u1 : carry_gen port map(ai => inp1, bi => inp2, c0 => carry_in, carry_out => temp5);
 
 u2 : csla port map(Cselect => temp5, a_32 => inp1, b_32 => inp2, result_32 => result);
-
 
 
 end architecture structural;

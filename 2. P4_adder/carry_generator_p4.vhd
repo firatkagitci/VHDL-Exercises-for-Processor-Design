@@ -125,20 +125,30 @@ end generate;
 --pgblock_14: PG_block port map (Gk1j=>g_sig(28), Pk1j=>p_sig(28), Pik =>p_sig(29), Gik =>g_sig(29), Pij =>p_sig_1(15), Gij =>g_sig_1(15));
 --pgblock_15: PG_block port map (Gk1j=>g_sig(30), Pk1j=>p_sig(30), Pik =>p_sig(31), Gik =>g_sig(31), Pij =>p_sig_1(16), Gij =>g_sig_1(16));		
 		
+		
+		
 	-- Single G block in the second level 
 G_block_2: G_block port map( Pik => p_sig_1(2), Gk1j => g_sig_1(1) , Gik => g_sig_1(2), Gij => temp1);
 	
 	g_sig_2(1) <= temp1;
 	carry_out(0) <= temp1;
 	
+	
+	
 	-- PG blocks in the second level
-pgblock1_1:	PG_block port map(Gk1j=>g_sig_1(3),  Pk1j=>p_sig_1(3),  Pik =>p_sig_1(4),  Gik =>g_sig_1(4),  Pij =>p_sig_2(2), Gij =>g_sig_2(2));			
-pgblock1_2:	PG_block port map(Gk1j=>g_sig_1(5),  Pk1j=>p_sig_1(5),  Pik =>p_sig_1(6),  Gik =>g_sig_1(6),  Pij =>p_sig_2(3), Gij =>g_sig_2(3));
-pgblock1_3:	PG_block port map(Gk1j=>g_sig_1(7),  Pk1j=>p_sig_1(7),  Pik =>p_sig_1(8),  Gik =>g_sig_1(8),  Pij =>p_sig_2(4), Gij =>g_sig_2(4));
-pgblock1_4:	PG_block port map(Gk1j=>g_sig_1(9),  Pk1j=>p_sig_1(9),  Pik =>p_sig_1(10), Gik =>g_sig_1(10), Pij =>p_sig_2(5), Gij =>g_sig_2(5));
-pgblock1_5:	PG_block port map(Gk1j=>g_sig_1(11), Pk1j=>p_sig_1(11), Pik =>p_sig_1(12), Gik =>g_sig_1(12), Pij =>p_sig_2(6), Gij	=>g_sig_2(6));
-pgblock1_6:	PG_block port map(Gk1j=>g_sig_1(13), Pk1j=>p_sig_1(13), Pik =>p_sig_1(14), Gik =>g_sig_1(14), Pij =>p_sig_2(7), Gij	=>g_sig_2(7));
-pgblock1_7:	PG_block port map(Gk1j=>g_sig_1(15), Pk1j=>p_sig_1(15), Pik =>p_sig_1(16), Gik =>g_sig_1(16), Pij =>p_sig_2(8), Gij =>g_sig_2(8));
+	
+pg_2generate: for i in 1 to N generate	
+pgblock_2:	PG_block port map(Gk1j=>g_sig_1(i*2-1),  Pk1j=>p_sig_1(i*2-1),  Pik =>p_sig_1(i*2-2),  Gik =>g_sig_1(i*2),  Pij =>p_sig_2(i), Gij =>g_sig_2(i));	
+end generate;								
+									
+									
+--pgblock1_1:	PG_block port map(Gk1j=>g_sig_1(3),  Pk1j=>p_sig_1(3),  Pik =>p_sig_1(4),  Gik =>g_sig_1(4),  Pij =>p_sig_2(2), Gij =>g_sig_2(2));			
+--pgblock1_2:	PG_block port map(Gk1j=>g_sig_1(5),  Pk1j=>p_sig_1(5),  Pik =>p_sig_1(6),  Gik =>g_sig_1(6),  Pij =>p_sig_2(3), Gij =>g_sig_2(3));
+--pgblock1_3:	PG_block port map(Gk1j=>g_sig_1(7),  Pk1j=>p_sig_1(7),  Pik =>p_sig_1(8),  Gik =>g_sig_1(8),  Pij =>p_sig_2(4), Gij =>g_sig_2(4));
+--pgblock1_4:	PG_block port map(Gk1j=>g_sig_1(9),  Pk1j=>p_sig_1(9),  Pik =>p_sig_1(10), Gik =>g_sig_1(10), Pij =>p_sig_2(5), Gij =>g_sig_2(5));
+--pgblock1_5:	PG_block port map(Gk1j=>g_sig_1(11), Pk1j=>p_sig_1(11), Pik =>p_sig_1(12), Gik =>g_sig_1(12), Pij =>p_sig_2(6), Gij	=>g_sig_2(6));
+--pgblock1_6:	PG_block port map(Gk1j=>g_sig_1(13), Pk1j=>p_sig_1(13), Pik =>p_sig_1(14), Gik =>g_sig_1(14), Pij =>p_sig_2(7), Gij	=>g_sig_2(7));
+--pgblock1_7:	PG_block port map(Gk1j=>g_sig_1(15), Pk1j=>p_sig_1(15), Pik =>p_sig_1(16), Gik =>g_sig_1(16), Pij =>p_sig_2(8), Gij =>g_sig_2(8));
 					
 							
 	-- Single G block in the third level 
