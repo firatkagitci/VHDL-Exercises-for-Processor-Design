@@ -28,6 +28,7 @@ architecture structural of csla is
 	
 	);
 	
+	
 	end component csla_block;
 
 begin 	
