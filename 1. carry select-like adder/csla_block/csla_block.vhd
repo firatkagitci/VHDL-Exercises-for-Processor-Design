@@ -2,8 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity csla_block is 
-		
-		
+
 	port (
 	
 	a			: in std_logic_vector (3 downto 0);
@@ -12,7 +11,7 @@ entity csla_block is
 	Sum			: out std_logic_vector (3 downto 0)
 	
 	);
-
+	
 end csla_block;
 
 architecture structural of csla_block is 
@@ -55,7 +54,7 @@ architecture structural of csla_block is
 	signal carry_1	: std_logic := '1';
 	
 begin 
--- instances of rca_gen
+--  instances of rca_gen
 u1: rca_gen generic map (N => N)
 	port map (a => a, b => b, cin => carry_0, s => result_0, cout => open);	
 	
