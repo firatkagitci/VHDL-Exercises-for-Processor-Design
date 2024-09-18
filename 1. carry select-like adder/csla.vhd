@@ -20,12 +20,10 @@ architecture structural of csla is
 	component csla_block
 		
 	port (
-	
 	a			: in std_logic_vector (3 downto 0);
 	b			: in std_logic_vector (3 downto 0);
 	C_sel 		: in std_logic;
 	Sum			: out std_logic_vector (3 downto 0)
-	
 	);
 	
 	
