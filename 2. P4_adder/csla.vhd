@@ -45,3 +45,57 @@ csla_block_8: csla_block port map (a => a_32(31 downto 28), b => b_32(31 downto 
 																--Cselect(7) represents carry bit 28
 
 end architecture structural;
+
+configuration CFG_csla of csla is
+for structural 
+	
+	for csla_block_1
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;
+
+	for csla_block_2
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;
+	
+	for csla_block_3
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;	
+
+	for csla_block_4
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;
+	
+	for csla_block_5
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;
+
+	for csla_block_6
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;
+	
+	for csla_block_7
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;
+	
+	for csla_block_8
+		for csla_block 
+		use configuration WORK.CFG_csla_block;
+		end for;
+	end for;
+
+end for;
+end CFG_csla;

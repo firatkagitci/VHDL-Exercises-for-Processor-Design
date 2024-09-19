@@ -8,7 +8,6 @@ port(
 	result: out std_logic_vector(64 downto 1);
 	carry_in: in std_logic
 	);
-
 end entity p4_adder;
 
 
@@ -27,7 +26,7 @@ component csla is
 	Cselect		: in std_logic_vector (6 downto 0);
 	a_32	 	: in std_logic_vector (31 downto 0);
 	b_32 		: in std_logic_vector (31 downto 0);
-	result_32	: out std_logic_vector (31 downto 0);
+	result_32	: out std_logic_vector(31 downto 0);
 	carry_in_csla: in std_logic
 	);
 end component;
@@ -45,3 +44,24 @@ u4 : csla port map(Cselect => temp6(6 downto 0), carry_in_csla => temp5(7), a_32
 
 end architecture structural;
 
+configuration CFG_p4 of p4_adder is 
+	for structural
+		for u1: carry_gen
+			use configuration WORK.CFG_carry_gen;
+		end for;
+		
+		for u2: carry_gen
+			use configuration WORK.CFG_carry_gen;
+		end for;
+
+		for u3: carry_gen
+			use configuration WORK.CFG_carry_gen;
+		end for;
+
+		for u4: carry_gen
+			use configuration WORK.CFG_carry_gen;
+		end for;
+
+	end for;
+	
+end CFG_p4;

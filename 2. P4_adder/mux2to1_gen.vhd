@@ -40,3 +40,8 @@ begin
 	end process;
 
 end architecture behave;
+
+configuration CFG_mux of mux2to1_gen is
+	for behave
+	end for;
+end CFG_mux;
