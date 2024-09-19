@@ -127,7 +127,7 @@ G_block_3: G_block port map( Pik => p_sig_2(2), Gk1j => g_sig_2(1) , Gik => g_si
 	carry_out(1) <= temp2;
 
 	-- PG blocks in the third level	
-pgblock_3genrate: for i in 2 to Z generate		
+pg_3generate: for i in 2 to Z generate		
 pgblock_3: PG_block port map (Gk1j=>g_sig_2(i*2-1), Pk1j=>p_sig_2(i*2-1), Pik =>p_sig_2(i*2), Gik =>g_sig_2(i*2), Pij =>p_sig_3(i), Gij =>g_sig_3(i));
 end generate;		
 		
@@ -149,3 +149,101 @@ G_block_4_2: G_block port map( Pik => p_sig_3(2), Gk1j => g_sig_3(1) , Gik => g_
 	G_block_5_4: G_block port map( Pik => p_sig_4(3), Gk1j => g_sig_4(1) , Gik => g_sig_4(3), Gij => carry_out(7));
 	--last one will create carry bit 32, that is the final carry out			
 end architecture structural;
+
+
+configuration CFG_carry_gen of carry_gen is
+for structural	
+	for pg_network_1 
+		for all PG_network 
+		use configuration WORK.CFG_PGNet;
+		end for;
+	end for;
+	
+	for G_block_1
+		for G_block 
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+	
+	for pgblock_1
+		for all PG_block
+		use configuration WORK.CFG_PG;
+		end for;
+	end for;
+
+	for G_block_2
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+	
+	for pg_2generate
+		for all PG_block
+		use configuration WORK.CFG_PG;
+		end for;
+	end for;
+	
+	for G_block_3
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+	
+	for pg_3generate
+		for all PG_block
+		use configuration WORK.CFG_PG;
+		end for;
+	end for;
+	
+	
+	for G_block_4_1
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+	
+	for G_block_4_2
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+	
+	for pgblock_4_1
+		for PG_block
+		use configuration WORK.CFG_PG;
+		end for;
+	end for;
+
+	for pgblock_4_2
+		for PG_block
+		use configuration WORK.CFG_PG;
+		end for;
+	end for;
+	
+	for G_block_5_1
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+
+	for G_block_5_2
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+
+	for G_block_5_3
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;
+
+	for G_block_5_4
+		for G_block
+		use configuration WORK.CFG_G;
+		end for;
+	end for;	
+
+end for;
+end CFG_carry_gen;	
+

@@ -20,3 +20,8 @@ begin
 	p <= a xor b; 
 
 end architecture behav;
+
+configuration CFG_PGNet of PG_network is 
+	for behav 
+	end for;
+end CFG_PGNet;
