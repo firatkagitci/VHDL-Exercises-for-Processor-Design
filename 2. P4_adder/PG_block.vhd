@@ -25,3 +25,8 @@ begin
 	Gij <= (Gk1j and Pik) or Gik;
 	
 end architecture BEHAVIORAL;
+
+configuration CFG_PG of PG_BLOCK is 
+	for BEHAVIORAL 
+	end for;
+end CFG_PG;

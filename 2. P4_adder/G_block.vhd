@@ -22,3 +22,9 @@ begin
 
 
 end architecture BEHAVIORAL;
+
+configuration CFG_G of G_BLOCK is 
+	for BEHAVIORAL 
+	end for;
+end CFG_G;	
+	
